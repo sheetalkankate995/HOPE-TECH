@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTINEL AI - Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #100c2b, #32145c, #721b70);
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 900px;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .welcome {
+            flex: 1;
+        }
+
+        .welcome h1 {
+            font-size: 42px;
+            color: #f6a6ff;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            color: #e0d5f0;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .login-card {
+            flex: 1;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            backdrop-filter: blur(12px);
+        }
+
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .login-card .subtitle {
+            text-align: center;
+            color: #d8c6e8;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #bda4d9;
+            border-radius: 9px;
+            background: rgba(255,255,255,0.12);
+            color: white;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #d0c1df;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(90deg, #c13bd4, #ed65a5);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .note {
+            text-align: center;
+            color: #d8c6e8;
+            font-size: 12px;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .welcome h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="welcome">
+            <h1>SENTINEL AI</h1>
+            <p>
+                Understanding language.<br>
+                Supporting awareness.
+            </p>
+            <br>
+            <p>
+                An educational machine learning project
+                exploring patterns in social media text.
+            </p>
+        </div>
+
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to continue</p>
+
+            <form action="/login" method="POST">
+                <label>Email Address</label>
+                <input type="email" name="email"
+                       placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" name="password"
+                       placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="note">
+                This is an educational project.
+                Predictions are not medical diagnoses.
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+    "model_name": "Genetic Algorithm Optimized Logistic Regression",
+    "accuracy": 86.2,
+    "precision": 86.23,
+    "recall": 86.2,
+    "f1_score": 86.2,
+    "labels": [
+        "non-suicide",
+        "suicide"
+    ],
+    "confusion_matrix": [
+        [
+            876,
+            124
+        ],
+        [
+            152,
+            848
+        ]
+    ],
+    "class_distribution": {
+        "non-suicide": 1000,
+        "suicide": 1000
+    },
+    "training_records": 6000,
+    "validation_records": 2000,
+    "test_records": 2000,
+    "selected_features": 165
+}

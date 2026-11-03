@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HOPE TECH | About Us</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f5ff;
+            color: #302044;
+        }
+
+        header {
+            background: linear-gradient(90deg, #32145c, #7544a0);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo i {
+            color: #ffb9d1;
+            margin-right: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc5dc;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 80px 8%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                linear-gradient(rgba(36, 13, 70, 0.88),
+                                rgba(83, 43, 125, 0.88)),
+                url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffc2dc;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffb9d1;
+            color: #38175f;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #54247e;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: #6c6079;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 24px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(70, 35, 100, 0.09);
+            border-bottom: 4px solid #9c70c2;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(70, 35, 100, 0.16);
+        }
+
+        .card i {
+            font-size: 38px;
+            color: #8251ad;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            color: #54247e;
+            font-size: 21px;
+            margin-bottom: 13px;
+        }
+
+        .card p {
+            color: #6c6079;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .technology {
+            background: #eee5f8;
+        }
+
+        .purpose {
+            text-align: center;
+            background: linear-gradient(90deg, #32145c, #7544a0);
+            color: white;
+            padding: 60px 8%;
+        }
+
+        .purpose h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .purpose p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .disclaimer {
+            max-width: 850px;
+            margin: 30px auto 0;
+            padding: 16px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #211039;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-heart"></i>
+        HOPE TECH
+    </div>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to <span>HOPE TECH</span>
+        </h1>
+
+        <p>
+            Together Towards Awareness & Innovation.
+            An educational machine learning project designed
+            to explore suicidal ideation signals in social media
+            text using Machine Learning and Genetic Algorithms.
+        </p>
+
+        <a href="{{ url_for('register') }}" class="btn">
+            <i class="fa-solid fa-user-plus"></i>
+            Get Started
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section class="section">
+
+    <h2 class="section-title">About HOPE TECH</h2>
+
+    <p class="section-description">
+        HOPE TECH is our final-year academic project.
+        It explores how machine learning techniques can
+        support research into identifying concerning
+        language patterns in social media text.
+    </p>
+
+    <div class="cards">
+
+        <!-- MISSION -->
+        <div class="card">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            <h3>Our Mission</h3>
+
+            <p>
+                To explore machine learning approaches
+                for understanding potentially concerning
+                language patterns in online text.
+            </p>
+
+        </div>
+
+
+        <!-- VISION -->
+        <div class="card">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To encourage awareness, responsible
+                technology development and research
+                using artificial intelligence.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT WE DO -->
+        <div class="card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>What We Do</h3>
+
+            <p>
+                We study social media text using
+                machine learning models and compare
+                their experimental results.
+            </p>
+
+        </div>
+
+
+        <!-- TECHNOLOGY -->
+        <div class="card">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <h3>Our Technology</h3>
+
+            <p>
+                Our project uses Python, Flask,
+                Machine Learning, Natural Language
+                Processing and Genetic Algorithms.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PURPOSE SECTION -->
+<section class="purpose">
+
+    <h2>
+        <i class="fa-solid fa-heart"></i>
+        Our Purpose
+    </h2>
+
+    <p>
+        Our goal is to explore how technology can
+        contribute to awareness and academic research.
+        We believe responsible innovation and human
+        understanding should go together.
+    </p>
+
+    <div class="disclaimer">
+
+        <strong>Educational Disclaimer:</strong>
+
+        HOPE TECH is an academic research prototype.
+        Its predictions are experimental and are not
+        a medical diagnosis, clinical assessment or
+        substitute for professional mental health support.
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        &copy; 2026 HOPE TECH.
+        Together Towards Awareness & Innovation.
+    </p>
+
+</footer>
+
+</body>
+</html>

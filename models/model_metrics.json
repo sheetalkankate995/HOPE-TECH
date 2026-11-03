@@ -1,0 +1,28 @@
+{
+    "model_name": "Original Logistic Regression",
+    "accuracy": 90.8,
+    "precision": 90.89,
+    "recall": 90.8,
+    "f1_score": 90.79,
+    "labels": [
+        "non-suicide",
+        "suicide"
+    ],
+    "confusion_matrix": [
+        [
+            932,
+            68
+        ],
+        [
+            116,
+            884
+        ]
+    ],
+    "class_distribution": {
+        "non-suicide": 1000,
+        "suicide": 1000
+    },
+    "training_records": 6000,
+    "validation_records": 2000,
+    "test_records": 2000
+}
